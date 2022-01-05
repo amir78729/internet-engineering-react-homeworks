@@ -1,0 +1,12 @@
+.UserList {
+    min-height: 100px;
+}
+.Container {
+    position: relative;
+}
+.LoadingIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

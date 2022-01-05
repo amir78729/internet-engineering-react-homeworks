@@ -1,0 +1,24 @@
+.UserContainer {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 2fr;
+    text-align: left;
+    padding: 0px 10px;
+    margin: 2px;
+    
+}
+.UserContainer>* {
+    padding: 0 25px;
+}
+
+.UserContainer a {
+    margin: auto 0;
+    color: white;
+}
+
+.UserRow {
+    background-color: #000d;
+    border-radius: 5px;
+}
+.UserRow:hover {
+    background-color: #000e;
+}

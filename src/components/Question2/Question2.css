@@ -1,0 +1,14 @@
+.Q2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.Buttons-container {
+    display: flex;
+}
+.Buttons-container > *:not(:last-child) {
+    margin-right: 10px;
+}

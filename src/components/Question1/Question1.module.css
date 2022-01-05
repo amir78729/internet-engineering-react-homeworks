@@ -1,0 +1,13 @@
+.Q1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ButtonsContainer {
+    display: flex;
+}
+.ButtonsContainer > *:not(:last-child) {
+    margin-right: 10px;
+}

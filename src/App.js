@@ -1,23 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import { Question1Component } from './components/Question1/Question1';
+import { Question2Component } from './components/Question2/Question2';
+import { Question3Component } from './components/Question3/Question3';
+import { useState } from 'react';
+import { ChangePageButton } from './components/other/ChangePageButton/ChangePageButton';
 
 function App() {
+  const [questionNumber, setQuestionNumber] = useState(1)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App-container'>
+      <ChangePageButton isNext={false} onClick={() => setQuestionNumber(questionNumber - 1)} hidden={questionNumber === 1} />
+      <div className="App">
+        {questionNumber === 1 && <Question1Component />}
+        {questionNumber === 2 && <Question2Component />}
+        {questionNumber === 3 && <Question3Component />}
+      </div>
+      <ChangePageButton isNext onClick={() => setQuestionNumber(questionNumber + 1)} hidden={questionNumber === 3}/>
     </div>
   );
 }
