@@ -7,4 +7,6 @@
   box-sizing: border-box;
   font-family: 'Press Start 2P', cursive;
   background-color: #000;
+  width: 230px;
+  overflow: auto;
 }
