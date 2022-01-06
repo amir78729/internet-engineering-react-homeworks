@@ -5,12 +5,14 @@
     flex-direction: column;
     direction: rtl;
     max-width: 500px;
+    max-height: 60vh;
+    background-color: #0006;
     text-align: justify;
+    padding: 20px;
+    overflow: auto;
+    border-radius: 10px;
+    line-height: 30px;
 }
-
-.ButtonsContainer {
-    display: flex;
-}
-.ButtonsContainer > *:not(:last-child) {
-    margin-right: 10px;
+.Q1 p {
+    margin: 0;
 }
