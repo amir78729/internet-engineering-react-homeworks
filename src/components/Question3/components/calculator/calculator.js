@@ -10,16 +10,14 @@ export default function Calculator() {
     switch (op) {
       case '+':
         return n1 + n2;
-        
       case '-':
         return n1 - n2;
-
       case 'x':
           return n1 * n2;
-
       case '÷':
         return n1 / n2;
-
+      case '%':
+        return n1 * n2 / 100;
       default:
         return;
     }
@@ -38,7 +36,7 @@ export default function Calculator() {
           setNumber2(number2 => number2 + button)
        }
 
-    } else if ('+-÷x'.split('').includes(button)) {
+    } else if ('+-÷x%'.split('').includes(button)) {
       if (number1 !== '') {
         setOperator(button);
       } else {
