@@ -8,7 +8,7 @@ export const ChangePageButton = ({ isNext, hidden, onClick }) => {
             disabled={hidden}
             onClick={onClick}
         >
-            {isNext ? '+' : '-'}
+            {isNext ? 'سوال\nبعد' : 'سوال\nقبل'}
         </button>
     )
 }

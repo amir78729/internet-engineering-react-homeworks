@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react"
-import { colors } from "../../constants/colors";
-import { Button } from "../other/Button/Button";
+import Calculator from "./components/calculator";
 export const Question4Component = () => {
     return (
-        <div className="Q1">
-            <h1>Question 4</h1>
+        <div className="Q4">
+            <h1>سوال ۴</h1>
+            <Calculator />
         </div>
     )
 }

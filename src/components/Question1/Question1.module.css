@@ -3,6 +3,9 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    direction: rtl;
+    max-width: 500px;
+    text-align: justify;
 }
 
 .ButtonsContainer {

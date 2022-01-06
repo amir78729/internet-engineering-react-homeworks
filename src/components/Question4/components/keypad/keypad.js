@@ -1,6 +1,6 @@
 import React from 'react';
 import s from './keypad.module.css';
-import Button from '../button';
+import Button from '../button/button';
 import cx from 'classnames';
 import PropTypes from 'prop-types';
 

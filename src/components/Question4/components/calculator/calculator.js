@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Keypad from '../keypad';
-import Screen from '../screen';
+import Keypad from '../keypad/keypad';
+import Screen from '../screen/screen';
 import s from './calculator.module.css';
 
 export default function Calculator() {

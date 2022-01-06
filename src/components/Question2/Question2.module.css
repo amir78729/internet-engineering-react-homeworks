@@ -1,14 +1,13 @@
-.Q2 {
+.Q1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    height: 100%;
 }
 
-.Buttons-container {
+.ButtonsContainer {
     display: flex;
 }
-.Buttons-container > *:not(:last-child) {
+.ButtonsContainer > *:not(:last-child) {
     margin-right: 10px;
 }
