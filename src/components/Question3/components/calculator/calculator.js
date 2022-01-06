@@ -33,10 +33,8 @@ export default function Calculator() {
 
     } else if ([...Array(10).keys()].map(num => ''+num).includes(button)) {
        if (operator === '') {
-          // setNumber1(number1 * 10 + Number(button))
          setNumber1(number1 => number1 + button)
        } else {
-          // setNumber2(number2 * 10 + Number(button))
           setNumber2(number2 => number2 + button)
        }
 
