@@ -33,29 +33,40 @@ export default function Calculator() {
 
     } else if ([...Array(10).keys()].map(num => ''+num).includes(button)) {
        if (operator === '') {
-          setNumber1(number1 * 10 + Number(button))
+          // setNumber1(number1 * 10 + Number(button))
+         setNumber1(number1 => number1 + button)
        } else {
-          setNumber2(number2 * 10 + Number(button))
+          // setNumber2(number2 * 10 + Number(button))
+          setNumber2(number2 => number2 + button)
        }
 
     } else if ('+-÷x'.split('').includes(button)) {
-      setOperator(button)
+      if (number1 !== '') {
+        setOperator(button);
+      } else {
+        return;
+      }
       if (number2 !== '') {
-        setNumber1(calculate(number1, operator, number2));
+        setNumber1(calculate(parseFloat(number1), operator, parseFloat(number2)));
         setNumber2('')
       }
 
+
     } else if (button === '='){
-      setNumber1(calculate(number1, operator, number2));
-      setNumber2('');
-      setOperator('');
+      if (number2 !== '') {
+        setNumber1(calculate(number1, operator, number2));
+        setNumber2('');
+        setOperator('');
+      }
 
     } else if (button === '+/-') {
       setNumber1(number1 => -1 * number1)
 
     } else if (button === '.') {
       if (number2 === '') {
-        setNumber1(setNumber1 + '.')
+        setNumber1(setNumber1 => setNumber1 + '.')
+      } else {
+        setNumber2(setNumber2 => setNumber2 + '.')
       }
     }
   }
@@ -65,7 +76,7 @@ export default function Calculator() {
 
   return (
     <div className={s.calculator}>
-      <Screen text={number1 + operator + number2}/>
+      <Screen text={`${number1}${operator}${number2}`}/>
       <Keypad clickHandle={btn => handleClickedButton(btn)} />
     </div>
   );
