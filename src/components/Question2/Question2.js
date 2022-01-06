@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react"
-import { colors } from "../../constants/colors";
-import { Button } from "../other/Button/Button";
-import s from "./Question2.module.css"
+import { useEffect, useState } from 'react';
+import { colors } from '../../constants/colors';
+import { Button } from '../other/Button/Button';
+import s from './Question2.module.css';
 export const Question2Component = () => {
     const [counter, setCounter] = useState(0);
     const [isUpCounting, setIsUpCounting] = useState(true);
@@ -13,27 +13,25 @@ export const Question2Component = () => {
         } else {
             setIsTimerActive(true);
         }
-    }
+    };
     const toggleUpCounting = () => {
         if (isUpCounting) {
             setIsUpCounting(false);
         } else {
             setIsUpCounting(true);
         }
-    }
+    };
     useEffect(() => {
         let timer;
         if (isTimerActive) {
             timer = setInterval(() => {
-                setCounter(counter =>  isUpCounting ? counter + 1 : counter - 1);
+                setCounter((counter) => (isUpCounting ? counter + 1 : counter - 1));
             }, 1000);
         } else {
-            clearInterval(timer)
+            clearInterval(timer);
         }
         return () => clearInterval(timer);
-    }, [isTimerActive, isUpCounting])
-
-    
+    }, [isTimerActive, isUpCounting]);
 
     const reset = () => {
         setCounter(0);
@@ -47,23 +45,26 @@ export const Question2Component = () => {
             <div>
                 <h4>Counter: {counter}</h4>
                 <div className={s.ButtonsContainer}>
-                    <Button 
-                        title="reset" 
-                        onClick={reset} 
+                    <Button
+                        title="reset"
+                        onClick={reset}
                         background={colors.YELLOW}
-                        disabled={counter === 0 && !isTimerActive} />
-                    <Button 
-                        title={`${isTimerActive ? 'stop' : 'start'} ⏱`} 
-                        onClick={toggleTimer} 
-                        color={'white'} 
-                        background={isTimerActive ? colors.RED : colors.GREEN} />
-                    <Button 
-                        title={isUpCounting ? 'up counting 🔼' : 'down counting 🔽'} 
-                        onClick={toggleUpCounting} 
-                        color={'white'} 
-                        background={!isUpCounting ? colors.RED : colors.GREEN} />
+                        disabled={counter === 0 && !isTimerActive}
+                    />
+                    <Button
+                        title={`${isTimerActive ? 'stop' : 'start'} ⏱`}
+                        onClick={toggleTimer}
+                        color={'white'}
+                        background={isTimerActive ? colors.RED : colors.GREEN}
+                    />
+                    <Button
+                        title={isUpCounting ? 'up counting 🔼' : 'down counting 🔽'}
+                        onClick={toggleUpCounting}
+                        color={'white'}
+                        background={!isUpCounting ? colors.RED : colors.GREEN}
+                    />
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
