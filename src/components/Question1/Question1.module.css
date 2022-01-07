@@ -3,16 +3,45 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    direction: rtl;
     max-width: 500px;
     max-height: 60vh;
     background-color: #0006;
     text-align: justify;
-    padding: 20px;
+    padding: 40px;
     overflow: auto;
     border-radius: 10px;
     line-height: 30px;
 }
 .Q1 p {
     margin: 0;
+    direction: rtl;
+
+}
+.Q1 h2 {
+    color: #89cfec;
+    direction: ltr;
+}
+
+.Q1 a {
+    color: white;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #89cfecaa;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #89cfecff;
+    cursor: pointer;
 }
