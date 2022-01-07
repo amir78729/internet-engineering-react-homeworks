@@ -4,12 +4,10 @@ import Screen from '../screen/screen';
 import s from './calculator.module.css';
 
 export default function Calculator() {
-    // TODO: Implement calculator logic here
-
     const calculate = (n1, op, n2) => {
         switch (op) {
             case '+':
-                return n1 + n2;
+                return parseFloat(n1) + parseFloat(n2);
             case '-':
                 return n1 - n2;
             case 'x':
@@ -17,7 +15,7 @@ export default function Calculator() {
             case '÷':
                 return n1 / n2;
             case '%':
-                return (n1 * n2) / 100;
+                return calculate(n1, operator, (n1 * n2) / 100);
             default:
                 return;
         }
@@ -34,11 +32,11 @@ export default function Calculator() {
             } else {
                 setNumber2((number2) => number2 + button);
             }
-        } else if ('+-÷x%'.split('').includes(button)) {
+        } else if ('+-÷x'.split('').includes(button)) {
             if (number1 !== '') {
                 setOperator(button);
-            } else {
-                return;
+            } else if (button === '-') {
+                setNumber1('-');
             }
             if (number2 !== '') {
                 setNumber1(calculate(parseFloat(number1), operator, parseFloat(number2)));
@@ -52,6 +50,12 @@ export default function Calculator() {
             }
         } else if (button === '+/-') {
             setNumber1((number1) => -1 * number1);
+        } else if (button === '%') {
+            if (number2 !== '' && number2 !== '' && operator !== '') {
+                setNumber1(calculate(parseFloat(number1), '%', parseFloat(number2)));
+                setNumber2('');
+                setOperator('');
+            }
         } else if (button === '.') {
             if (number2 === '') {
                 setNumber1((setNumber1) => setNumber1 + '.');

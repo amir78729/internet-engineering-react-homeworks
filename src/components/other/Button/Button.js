@@ -1,5 +1,5 @@
 import './Button.css';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 export const Button = ({ title, disabled, onClick, color, background = '#fff' }) => {
     return (
@@ -17,6 +17,5 @@ Button.propTypes = {
     disabled: PropTypes.bool,
     onClick: PropTypes.func,
     color: PropTypes.string,
-    background: PropTypes.string,
+    background: PropTypes.string
 };
-
